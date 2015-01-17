@@ -59,35 +59,36 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .controller('CardsCtrl', function($scope, TDCardDelegate) {
   var cardTypes = [
-    { image: 'max.jpg' },
-    { image: 'ben.png' },
-    { image: 'perry.jpg' },
-    {image: 'red.jpg'}
+    { image: 'max.jpg', title: 'max' },
+    { image: 'ben.png', title: 'ben' },
+    { image: 'perry.jpg', title: 'perry' },
+    {image: 'red.jpg', title: 'red'}
   ];
 
-  $scope.cardDestroyed = function(index) {
-    $scope.cards.splice(index, 1);
-  };
+  $scope.cards = [];
 
   $scope.addCard = function() {
     var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
     newCard.id = Math.random();
-    $scope.cards.unshift(angular.extend({}, newCard));
+    $scope.cards.push(angular.extend({}, newCard));
   };
-  
-  $scope.cards = [];
   for(var i = 0; i < 3; i++) $scope.addCard();
-})
 
-.controller('CardCtrl', function($scope, TDCardDelegate) {
   $scope.cardSwipedLeft = function(index) {
-    console.log('LEFT SWIPE');
-    $scope.addCard();
+    console.log('LEFT2 SWIPE');
   };
   $scope.cardSwipedRight = function(index) {
     console.log('RIGHT SWIPE');
-    $scope.addCard();
+  };  
+  $scope.cardDestroyed = function(index, card) {
+    $scope.cards.splice(index, 1);
+    console.log('Card Removed');
+    console.log(card.title);
   };
+})
+
+.controller('CardCtrl', function($scope, TDCardDelegate) {
+  
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {

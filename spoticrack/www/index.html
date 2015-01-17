@@ -122,7 +122,7 @@
     <script id="main.html" type="text/ng-template">
       <ion-view ng-controller="CardsCtrl" view-title="Discover">
         <td-cards>
-          <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+          <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index, card)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
             <div class="image" ng-controller="CardCtrl">
               <div class="no-text">NOPE</div>
               <img ng-src="{{card.image}}">
@@ -130,7 +130,7 @@
             </div>
             <div class="item">
               <h2><strong>Song Title</strong></h2>
-              <h3>Artist</h3>
+              <h3>{{card.title}}</h3>
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
               <a class="tab-item" ng-click="cardDestroyed($index)" href="#">
