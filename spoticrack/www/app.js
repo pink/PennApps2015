@@ -95,3 +95,10 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
     $ionicSideMenuDelegate.toggleLeft();
   };
 });
+
+function toggle(source) {
+  checkboxes = document.getElementsByName('pref');
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+  }
+}
