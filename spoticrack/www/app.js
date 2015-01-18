@@ -9,6 +9,10 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+    .state('spot-login', {
+      url: '/spot-login',
+      templateUrl: 'spot-login.html',
+    })
     .state('menu', {
       url: "/menu",
       abstract: true,
@@ -18,7 +22,7 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
       url: "/main",
       views: {
         'menuContent' :{
-          templateUrl: "main.html"
+          templateUrl: "main.html",
         }
       }
     })
@@ -41,7 +45,7 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
       }
     })
   
-  $urlRouterProvider.otherwise("/menu/main");
+  $urlRouterProvider.otherwise("/spot-login");
 })
 
 .directive('noScroll', function() {

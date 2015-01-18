@@ -19,6 +19,7 @@
     <script src="app.js"></script>
     <script src="collide/collide.js"></script>
     <script src="js/ionic.tdcards.js"></script>
+    <script src="js/spotify.js"></script>
   </head>
 
   <!-- 
@@ -119,6 +120,14 @@
       </ion-view>
     </script>
 
+    <script id="spot-login.html" type="text/ng-template">
+      <ion-view view-title="Login">
+        <ion-content>
+          <button onClick="authorize()" class="button icon-right ion-power button-calm">Login</button>
+        </ion-content>
+      </ion-view>
+    </script>
+
     <script id="main.html" type="text/ng-template">
       <ion-view ng-controller="CardsCtrl" view-title="Discover">
         <td-cards>
@@ -142,6 +151,7 @@
             </div>
           </td-card>
         </td-cards>
+
       </ion-view>
     </script>
 
