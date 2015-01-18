@@ -8,6 +8,7 @@
 var flag = true;
 var card_scope;
 var audioObject = null;
+var lastCard;
 angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -92,11 +93,13 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
   };
   $scope.cardSwipedRight = function(index, card) {
     addToMusic(card.id);
-    setSeed("artist", card.artist, card_scope);
+    if ($scope.cards.length < 4){
+      setSeed("artist", card.artist, card_scope);
+    }
     $scope.cards.pop();
   };  
   $scope.cardDestroyed = function(index, card) {
-    $scope.cards.pop();
+    lastCard = $scope.cards.pop();
     console.log('Card Removed');
     console.log(card.title);
     stop();
@@ -178,4 +181,12 @@ function stop(){
     audioObject = null;
   }
 }
+
+function doRefresh() {
+  if (card_scope.cards.length == 0){
+    setSeed("artist", lastCard.artist, card_scope);
+    card_scope.$apply();
+  }
+  card_scope.$apply();
+};
 

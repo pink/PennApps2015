@@ -1,158 +1,204 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Overflow by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Ionic Seed App</title>
-
-    <!-- ionic css -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link href="css/ionic.css" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
-    <!-- angularjs scripts -->
-    <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-
-    <!-- cordova script -->
+	<head>
+		<title>Overflow by HTML5 UP</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.poptrox.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
     <script src="cordova.js"></script>
     <script src="app.js"></script>
     <script src="collide/collide.js"></script>
     <script src="js/ionic.tdcards.js"></script>
     <script src="js/spotify.js"></script>
-  </head>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
 
-  <!-- 
-    'starter' is the name of this angular module (js/app.js)
-  -->
-  <body ng-app="starter" ng-controller="MainCtrl" no-scroll>
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1>Spotiflow</h1>
+					<p>By A. He, Y. Hong, & <br>S. Kallungal</p>
+				</header>
+				<footer>
+					<a href="#" onClick="authorize()" class="button style1">Login</a>
+				</footer>
+			</section>
+	
+		
+		<!-- Generic -->
+		<!--
+			<article class="container box style3">
+				<header>
+					<h2>Generic Box</h2>
+					<p>Just a generic box. Nothing to see here.</p>
+				</header>
+				<section>
+					<header>
+						<h3>Paragraph</h3>
+						<p>This is a subtitle</p>
+					</header>
+					<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque 
+					habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi 
+					leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit 
+					amet risus elit.</p>
+				</section>
+				<section>
+					<header>
+						<h3>Blockquote</h3>
+					</header>
+					<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+					tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
+				</section>
+				<section>
+					<header>
+						<h3>Divider</h3>
+					</header>
+					<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra 
+					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci 
+					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam 
+					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+					posuere cubilia.</p>
+					<hr />
+					<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra 
+					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci 
+					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam 
+					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+					posuere cubilia.</p>
+				</section>
+				<section>
+					<header>
+						<h3>Unordered List</h3>
+					</header>
+					<ul class="default">
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+					</ul>
+				</section>
+				<section>
+					<header>
+						<h3>Ordered List</h3>
+					</header>
+					<ol class="default">
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+					</ol>
+				</section>
+				<section>
+					<header>
+						<h3>Table</h3>
+					</header>
+					<div class="table-wrapper">
+						<table class="default">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Description</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>45815</td>
+									<td>Something</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>29.99</td>
+								</tr>
+								<tr>
+									<td>24524</td>
+									<td>Nothing</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>19.99</td>
+								</tr>
+								<tr>
+									<td>45815</td>
+									<td>Something</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>29.99</td>
+								</tr>
+								<tr>
+									<td>24524</td>
+									<td>Nothing</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>19.99</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="3"></td>
+									<td>100.00</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</section>
+				<section>
+					<header>
+						<h3>Form</h3>
+					</header>
+					<form method="post" action="#">
+						<div class="row">
+							<div class="6u">
+								<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
+							</div>
+							<div class="6u">
+								<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<select name="department" id="department">
+									<option value="">Choose a department</option>
+									<option value="1">Manufacturing</option>
+									<option value="2">Administration</option>
+									<option value="3">Support</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<textarea name="message" id="message" placeholder="Enter your message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<ul class="actions">
+									<li><input type="submit" value="Submit" /></li>
+									<li><input type="reset" class="style3" value="Clear Form" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</section>
+			</article>
+		-->
 
-    <ion-nav-view></ion-nav-view>
-    <script id="menu.html" type="text/ng-template">
-      <ion-side-menus enable-menu-with-back-views="false">
+		</section>
 
-        <ion-side-menu-content>
-          <ion-nav-bar class="bar-stable">
-            <ion-nav-back-button>
-            </ion-nav-back-button>
-
-            <ion-nav-buttons side="left">
-              <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-              </button>
-            </ion-nav-buttons>
-          </ion-nav-bar>
-
-          <ion-nav-view name="menuContent"></ion-nav-view>
-        </ion-side-menu-content> 
-
-        <ion-side-menu side="left">
-          <ion-header-bar class="bar-calm">
-            <h1 class="title">Butts</h1>
-          </ion-header-bar>
-          <ion-content class="has-header dark">
-            <ion-list>
-              <!-- Note each link has the 'menu-close' attribute so the menu auto closes when clicking on one of these links -->
-              <ion-item href="#/menu/main" class="icon item-icon-left" nav-clear menu-close><i class="icon ion-home"></i>Discover</ion-item>
-              <ion-item href="#/menu/settings" class="icon item-icon-left" nav-clear menu-close><i class="icon ion-gear-b"></i>Settings</ion-item>
-              <ion-item href="#/menu/about" class="icon item-icon-left" nav-clear menu-close><i class="icon ion-help-circled"></i>About</ion-item>
-            </ion-list>
-          </ion-content>
-        </ion-side-menu>
-
-      </ion-side-menus>
-    </script>
-
-    <script id="settings.html" type="text/ng-template">
-      <ion-view view-title="Settings">
-        <ion-content>
-          <ul class="list">
-            <li class="item item-checkbox">
-              <label class="checkbox">
-                <input onClick="toggle(this)" type="checkbox">
-              </label>
-              All
-            </li>
-            <li class="item item-checkbox">
-              <label class="checkbox">
-                <input name="pref" type="checkbox">
-              </label>
-              Country
-            </li>
-            <li class="item item-checkbox">
-              <label class="checkbox">
-                <input name="pref" type="checkbox">
-              </label>
-              EDM
-            </li>
-            <li class="item item-checkbox">
-              <label class="checkbox">
-                <input name="pref" type="checkbox">
-              </label>
-              Hip Hop
-            </li>
-            <li class="item item-checkbox">
-              <label class="checkbox">
-                <input name="pref" type="checkbox">
-              </label>
-              Pop
-            </li>
-            <li class="item item-checkbox">
-              <label class="checkbox">
-                <input name="pref" type="checkbox">
-              </label>
-              Pop Rock
-            </li>
-            <li class="item item-checkbox">
-              <label class="checkbox">
-                <input name="pref" type="checkbox">
-              </label>
-              Rock
-            </li>
-          </ul>
-        </ion-content>
-      </ion-view>
-    </script>
-
-    <script id="about.html" type="text/ng-template">
-      <ion-view view-title="About">
-        <ion-content>
-        </ion-content>
-      </ion-view>
-    </script>
-
-    <script id="spot-login.html" type="text/ng-template">
-      <ion-view view-title="Login">
-        <ion-content>
-          <button onClick="authorize()" class="button icon-right ion-power button-calm">Login</button>
-        </ion-content>
-      </ion-view>
-    </script>
-
-    <script id="main.html" type="text/ng-template">
-      <ion-view ng-controller="CardsCtrl" view-title="Discover">
-        <td-cards>
-          <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index, card)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index, card)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
-            <div class="image" id="results" ng-controller="CardCtrl">
-              <div class="no-text">NOPE</div>
-              <img id="pic" value="{{card.song}}" onClick="play()" ng-src="{{card.image}}">
-              <div class="yes-text">LIKE</div>
-            </div>
-            <div class="item">
-              <h2><strong>{{card.title}}</strong></h2>
-              <h3>{{card.artist}}</h3>
-            </div>
-            <div class="item tabs tabs-secondary tabs-icon-left">
-              <a class="tab-item" ng-click="cardDestroyed($index, card)" href="#">
-                <i class="icon ion-close-round"></i>
-              </a>
-              <a class="tab-item" ng-click="cardDestroyed($index, card)" href="#">
-                <i class="icon ion-checkmark-round"></i>
-              </a>
-            </div>
-          </td-card>
-        </td-cards>
-
-      </ion-view>
-    </script>
-
-  </body>
+	</body>
 </html>

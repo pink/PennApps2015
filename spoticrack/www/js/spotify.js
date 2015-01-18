@@ -68,11 +68,11 @@ function getTracks(numTracks) {
         url += "/artist/similar?results=10";
     }
     else {
-        url += "/genre/artists?format=json";
+        url += "/genre/artists?format=json&results=5";
     }
 
     url+= "&api_key=" + echonest_key
-         + "&name=" + seedQuery;
+         + "&name=" + seedQuery.toLowerCase();
    
     $.getJSON(url, function(data) {
         artists = [];
@@ -98,10 +98,10 @@ function getTracks(numTracks) {
         }
         setTimeout(function(){        for (var i = 0; i < artists.length; i++){
             fetchTracks(songs[i]["id"], songs[i]["img"]);
-        }}, 2000);
+        }}, 1000);
 
        
-        setTimeout(function(){ console.log(scope.cards); document.location= "#/menu/main"}, 3000);
+        setTimeout(function(){ console.log(scope.cards); document.location= "#/menu/main"}, 1000);
         
     });
 }
