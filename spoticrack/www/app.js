@@ -90,6 +90,7 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.cardSwipedLeft = function(index) {
     console.log('LEFT2 SWIPE');
     $scope.cards.pop();
+    stop();
   };
   $scope.cardSwipedRight = function(index, card) {
     addToMusic(card.id);
@@ -97,6 +98,7 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
       setSeed("artist", card.artist, card_scope);
     }
     $scope.cards.pop();
+    stop();
   };  
   $scope.cardDestroyed = function(index, card) {
     lastCard = $scope.cards.pop();
